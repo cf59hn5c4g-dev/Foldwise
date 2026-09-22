@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foldwise — support</title>
+<style>
+  :root{--ink:#17201C;--paper:#F8F6F1;--panel:#EDEBE4;--line:rgba(23,32,28,.14);--score:#D6336C;--mat:#2E6E52}
+  html{background:var(--paper)}
+  body{margin:0;padding:48px 20px 80px;color:var(--ink);font:16px/1.55 Georgia,'Times New Roman',serif;max-width:68ch;margin:0 auto}
+  h1{font-weight:500;font-size:34px;line-height:1.15;letter-spacing:-.01em;margin:0 0 6px}
+  h2{font-weight:500;font-size:22px;margin:36px 0 8px}
+  h3{font-weight:500;font-size:17px;margin:24px 0 6px}
+  p{margin:0 0 14px}
+  ul{margin:0 0 14px;padding-left:22px}
+  li{margin:0 0 6px}
+  blockquote{margin:0 0 22px;padding:12px 16px;background:var(--panel);border-left:3px solid var(--mat);
+    font:400 14px/1.5 ui-monospace,Menlo,monospace}
+  code{font:400 .92em ui-monospace,Menlo,monospace;background:var(--panel);padding:1px 5px;border-radius:4px}
+  a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--mat);text-underline-offset:3px}
+  a:hover{color:var(--mat)}
+  strong{font-weight:600}
+  footer{margin-top:56px;padding-top:16px;border-top:1px solid var(--line);font:400 12px/1.5 ui-monospace,Menlo,monospace;opacity:.6}
+</style>
+</head>
+<body>
+<h1>Foldwise — support</h1>
+<p><strong>Last updated: 21 September 2026</strong></p>
+<p>Foldwise turns a measurement into a cut-ready template. Type the size of the card, photo or gift you are packaging and the app draws the flat net — every cut line, every fold, every glue tab — then gives you a file for your cutting machine, or a page you can print at true size and cut by hand.</p>
+<h2>Getting in touch</h2>
+<p>Email: <a href="mailto:grahamjokic@gmail.com">grahamjokic@gmail.com</a> *(replies within a few working days)*.</p>
+<p>It helps to say which piece you were making, the size you typed, and what you expected to happen. If it is about a cut or a print, a photo of the paper tells us more than a description does.</p>
+<h2>Common questions</h2>
+<h3>What files does it export, and which machines take them?</h3>
+<p>SVG and DXF for cutting machines, PNG for anything that wants an image, and PDF for printing. The app never talks to a machine directly — it writes files, and the machine's own software cuts them, which is why the question is really *which software*, not which machine. These all open SVG or DXF:</p>
+<ul><li><strong>Cricut</strong> — Design Space</li><li><strong>Silhouette</strong> (Cameo, Portrait, Curio) — Silhouette Studio</li><li><strong>Brother ScanNCut</strong> — CanvasWorkspace</li><li><strong>Glowforge</strong>, <strong>xTool</strong> — the Glowforge app, xTool Creative Space</li><li><strong>Lasers generally</strong> — LightBurn</li><li><strong>Design apps</strong>, if you want to edit first — Illustrator, Affinity Designer, Inkscape</li></ul>
+<p><strong>If your software will not open the SVG, try the DXF.</strong> Some packages import only one of the two, and some put SVG import behind a paid upgrade — Silhouette Studio is the one people most often meet this with. Foldwise writes both from the same design, so there is usually a way in. If neither works, tell us what you are using and we will look at it.</p>
+<p>Cut lines and fold lines come out separately, so you can crease the folds rather than cut them — but the two formats say it differently. In the <strong>SVG</strong> it is colour: cut lines are drawn in ink, fold lines in pink, and you set the pink paths to <strong>score</strong>. In the <strong>DXF</strong> it is layers: <code>CUT</code>, <code>SCORE</code>, <code>PERF</code> and <code>DRAW</code>, and you assign a tool to each by name.</p>
+<p>These names are their owners' trademarks. Foldwise is not affiliated with, authorised by or endorsed by any of them; they are named here so you can tell whether the files will open.</p>
+<h3>The printed piece is the wrong size</h3>
+<p>Print at <strong>100%</strong> — no "fit to page", no "shrink to fit", no scaling in the print dialog. A template that prints at 96% cuts the wrong size, and that is the one thing a paper template cannot survive. The print-at-home page carries a ruler along the top edge: measure it before you cut anything. If the ruler reads one inch to the inch, the piece will too.</p>
+<h3>Can I print onto envelopes I already own?</h3>
+<p>Yes. Under <strong>Paper</strong>, choose *Envelope* and pick the size — 19 standard sizes are there, and every number is editable if yours is a hair different. The app then treats the envelope as paper that somebody else has already cut: it prints the artwork and never draws a cut line, because a machine handed a cut file of an envelope would trim a perfectly good envelope. Postal guides for the address, stamp and sorting band are shown on screen and never printed.</p>
+<p>Sheets of die-cut labels work the same way — pick the sheet and the piece goes where the die already cut, rather than nesting.</p>
+<h3>Nothing prints, or the print dialog does not open</h3>
+<p>On iOS the app prints through AirPrint. If no printer appears, check the printer is on the same network and visible to other apps. If printing is blocked altogether — this can happen in some embedded browsers — the app saves the sheet as an image instead and says so, rather than reporting success over a printer that received nothing.</p>
+<p>Two-sided pieces print as two pages, front then back. Choose two-sided in the printer's own dialog with the same flip the app names, or print page 1, put the sheet back in face down, and print page 2.</p>
+<h3>Which spreadsheets can it read?</h3>
+<p><code>.csv</code> and <code>.xlsx</code> are read by the app itself. Legacy binary <code>.xls</code> is read in the App Store and Google Play builds; the web preview cannot open it and says so.</p>
+<p>The first written row is treated as the headers, and blank rows and columns inside the sheet are kept in their own places rather than closed up — so a sheet with a title above its headers, or a gap in the middle, merges the way it reads.</p>
+<h3>Where do my designs live? Is anything uploaded?</h3>
+<p>On the device, and nothing is uploaded. Foldwise makes no network request: no account, no analytics, no advertising, no crash reporting. Designs, photos and imported spreadsheets stay on your device until you choose to share a file. The full policy is on the privacy page.</p>
+<p>Because saves are local, they are included in an encrypted device backup and they are not synced between devices. Use <strong>Save/Load</strong> to keep a design, and the export buttons to get a file you can move yourself.</p>
+<h3>The typefaces look different on Android</h3>
+<p>The 46 typefaces are the ones iOS and macOS ship with. On Android about forty of them are substituted by whatever that device has, because those faces belong to Apple and cannot be bundled. The geometry, the sizes and the layout are identical — only the letterforms differ.</p>
+<h3>Does it work on iPad?</h3>
+<p>Yes, and it is laid out for it: the steps become a rail down the side, the cut file gets its own pane, and the assembled view rides in the corner of that pane so you can see what you are making while you work on it.</p>
+<h3>Refunds</h3>
+<p>Purchases are handled by Apple, not by us, so refunds go through Apple: <strong>reportaproblem.apple.com</strong>. Tell us anyway if something did not work — that is how it gets fixed.</p>
+<h2>Known limits</h2>
+<p>cuts them. Cricut's protocol is proprietary, and this is a deliberate constraint rather than a missing feature.</p>
+<ul><li><strong>The app never connects to a cutting machine.</strong> It writes files; the machine's software</li></ul>
+<p>glyphs *are* the strokes. An outline typeface drawn with a pen comes out hollow, so the app substitutes the nearest single-stroke face and says which.</p>
+<ul><li><strong>A pen cannot fill a shape.</strong> Machine-drawn lettering uses single-stroke alphabets whose</li></ul>
+<p>the bleed, or neighbours print on each other. Turn the bleed off and they close up.</p>
+<ul><li><strong>Bleed is painted, not clipped.</strong> Copies on one sheet are never packed closer than twice</li></ul>
+<footer>Foldwise &middot; support for the iOS and Android apps.</footer>
+</body>
+</html>
